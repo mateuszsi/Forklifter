@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5735863059852933817}
   - component: {fileID: 1960220041418627117}
+  - component: {fileID: 8482064744755563864}
   m_Layer: 0
   m_Name: MainFL
   m_TagString: Untagged
@@ -77,6 +78,20 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.08
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8482064744755563864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30060961691686696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf3c753e40267374499a5e2e13b61e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wheelRadius: 1.08
+  wheel: {fileID: 2307399576091121065}
 --- !u!1 &169965784428059880
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,8 +268,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7675543957180420961}
   - component: {fileID: 2688044477719628634}
+  - component: {fileID: 7630145274521105554}
   m_Layer: 0
-  m_Name: MainRL
+  m_Name: MainBL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -289,6 +305,20 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7630145274521105554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737605911777936495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf3c753e40267374499a5e2e13b61e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wheelRadius: 1
+  wheel: {fileID: 4719094903327212595}
 --- !u!1 &2711930526247060015
 GameObject:
   m_ObjectHideFlags: 0
@@ -659,6 +689,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2277871886684792414}
   - component: {fileID: 467702190992766712}
+  - component: {fileID: 8062672343499731630}
   m_Layer: 0
   m_Name: MainFR
   m_TagString: Untagged
@@ -695,6 +726,20 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.08
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8062672343499731630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6527325961606823635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf3c753e40267374499a5e2e13b61e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wheelRadius: 1.08
+  wheel: {fileID: 678952873293847009}
 --- !u!1 &7318849702892123938
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,8 +750,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4861931413773602800}
   - component: {fileID: 4110704685256508225}
+  - component: {fileID: 9067728379852284391}
   m_Layer: 0
-  m_Name: MainRR
+  m_Name: MainBR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -741,6 +787,20 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &9067728379852284391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7318849702892123938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf3c753e40267374499a5e2e13b61e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wheelRadius: 1
+  wheel: {fileID: 1188734164517487785}
 --- !u!1 &8323354036534750772
 GameObject:
   m_ObjectHideFlags: 0
@@ -863,6 +923,10 @@ MonoBehaviour:
   minFrokPos: 2.407445
   maxFrokPos: 9.16
   forkSpeed: 0.5
+  frontLeft: {fileID: 8482064744755563864}
+  frontRight: {fileID: 8062672343499731630}
+  backLeft: {fileID: 7630145274521105554}
+  backRight: {fileID: 9067728379852284391}
 --- !u!1 &8323354037369969140
 GameObject:
   m_ObjectHideFlags: 0

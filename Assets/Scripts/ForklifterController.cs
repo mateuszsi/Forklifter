@@ -20,10 +20,19 @@ namespace Forklifter
 		[SerializeField] private float maxFrokPos;
 		[SerializeField] private float forkSpeed;
 
+		[Header("Wheels")]
+		[SerializeField] private WheelController frontLeft;
+		[SerializeField] private WheelController frontRight;
+		[SerializeField] private WheelController backLeft;
+		[SerializeField] private WheelController backRight;
+
 		private float rotation;
+		private Vector3 previousPosition;
+		private Vector3 currentPosition;
 
 		private void Start()
 		{
+			currentPosition = forklifterTransform.position;
 			forkLifterRigidbody.centerOfMass = centerOfMass.localPosition;
 		}
 
@@ -63,6 +72,8 @@ namespace Forklifter
 				var speed = forklifterSpeed * vertical;
 				forkLifterRigidbody.velocity = forklifterTransform.forward * speed;
 			}
+
+			RotateWheels();
 		}
 
 		public void MoveFork(float dir)
@@ -73,6 +84,20 @@ namespace Forklifter
 			forkPosition.y = Mathf.Clamp(forkPosition.y, minFrokPos, maxFrokPos);
 
 			fork.localPosition = forkPosition;
+		}
+
+		private void RotateWheels()
+		{
+			previousPosition = currentPosition;
+			currentPosition = forklifterTransform.position;
+
+			var velocity = currentPosition - previousPosition;
+			var direction = Vector3.Dot(forklifterTransform.forward.normalized, velocity.normalized);
+
+			frontLeft.Rotate(velocity, direction);
+			backLeft.Rotate(velocity, direction);
+			frontRight.Rotate(velocity, direction);
+			backRight.Rotate(velocity, direction);
 		}
 	}
 }
