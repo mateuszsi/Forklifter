@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -190,6 +190,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Palett
+      objectReference: {fileID: 0}
+    - target: {fileID: 731801658567534323, guid: a4db35aee5557ea4795ccca09a1bedc6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 731801658567534323, guid: a4db35aee5557ea4795ccca09a1bedc6,
         type: 3}
@@ -824,110 +829,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 169965784428059880, guid: 07c736aeab7eae34f9eaa7e76376da33,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1550428879982453382, guid: 07c736aeab7eae34f9eaa7e76376da33,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2711930526247060015, guid: 07c736aeab7eae34f9eaa7e76376da33,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2872083046386831234, guid: 07c736aeab7eae34f9eaa7e76376da33,
-        type: 3}
-      propertyPath: m_StaticShadowCaster
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2872083046386831234, guid: 07c736aeab7eae34f9eaa7e76376da33,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 7a147622bc69c264989c001fa02b4101, type: 2}
-    - target: {fileID: 2936680881988979461, guid: 07c736aeab7eae34f9eaa7e76376da33,
-        type: 3}
-      propertyPath: m_StaticShadowCaster
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2936680881988979461, guid: 07c736aeab7eae34f9eaa7e76376da33,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 8874b8a0759feb14a8e47dc89ae9eb5a, type: 2}
-    - target: {fileID: 3020342085340593061, guid: 07c736aeab7eae34f9eaa7e76376da33,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3494636077989053019, guid: 07c736aeab7eae34f9eaa7e76376da33,
-        type: 3}
-      propertyPath: m_StaticShadowCaster
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3494636077989053019, guid: 07c736aeab7eae34f9eaa7e76376da33,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 8874b8a0759feb14a8e47dc89ae9eb5a, type: 2}
-    - target: {fileID: 4022054381898691926, guid: 07c736aeab7eae34f9eaa7e76376da33,
-        type: 3}
-      propertyPath: m_StaticShadowCaster
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4022054381898691926, guid: 07c736aeab7eae34f9eaa7e76376da33,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 8874b8a0759feb14a8e47dc89ae9eb5a, type: 2}
-    - target: {fileID: 4254977947884582642, guid: 07c736aeab7eae34f9eaa7e76376da33,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4990546151723888597, guid: 07c736aeab7eae34f9eaa7e76376da33,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5101688489610594881, guid: 07c736aeab7eae34f9eaa7e76376da33,
-        type: 3}
-      propertyPath: m_StaticShadowCaster
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5101688489610594881, guid: 07c736aeab7eae34f9eaa7e76376da33,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 7a147622bc69c264989c001fa02b4101, type: 2}
-    - target: {fileID: 5927381023073491167, guid: 07c736aeab7eae34f9eaa7e76376da33,
-        type: 3}
-      propertyPath: m_StaticShadowCaster
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5927381023073491167, guid: 07c736aeab7eae34f9eaa7e76376da33,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 8874b8a0759feb14a8e47dc89ae9eb5a, type: 2}
-    - target: {fileID: 7224877455987375271, guid: 07c736aeab7eae34f9eaa7e76376da33,
-        type: 3}
-      propertyPath: m_StaticShadowCaster
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7224877455987375271, guid: 07c736aeab7eae34f9eaa7e76376da33,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 8874b8a0759feb14a8e47dc89ae9eb5a, type: 2}
-    - target: {fileID: 8323354036534750772, guid: 07c736aeab7eae34f9eaa7e76376da33,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
+    - target: {fileID: 561183713, guid: 07c736aeab7eae34f9eaa7e76376da33, type: 3}
+      propertyPath: groundDetection
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 8323354036767388677, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
@@ -988,21 +892,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Forklift
-      objectReference: {fileID: 0}
-    - target: {fileID: 8323354036767388678, guid: 07c736aeab7eae34f9eaa7e76376da33,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8323354037369969140, guid: 07c736aeab7eae34f9eaa7e76376da33,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9170199329518214514, guid: 07c736aeab7eae34f9eaa7e76376da33,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07c736aeab7eae34f9eaa7e76376da33, type: 3}
