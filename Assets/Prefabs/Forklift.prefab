@@ -915,9 +915,9 @@ MonoBehaviour:
   forkLifterRigidbody: {fileID: 6318424997748583756}
   forklifterTransform: {fileID: 8323354036767388677}
   centerOfMass: {fileID: 2074468895}
-  forklifterSpeed: 5
-  maxRotation: 100
-  turnSpeed: 100
+  forklifterSpeed: 8
+  maxRotation: 45
+  turnSpeed: 40
   backRotation: 5
   fork: {fileID: 6439832236245805905}
   minFrokPos: 2.407445
