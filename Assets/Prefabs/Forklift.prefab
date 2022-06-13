@@ -549,6 +549,8 @@ GameObject:
   - component: {fileID: 6439832236245805905}
   - component: {fileID: 7606005020062389674}
   - component: {fileID: 2872083046386831234}
+  - component: {fileID: 3660047852552979939}
+  - component: {fileID: 4212929148703223227}
   m_Layer: 0
   m_Name: Lift
   m_TagString: Untagged
@@ -621,6 +623,32 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3660047852552979939
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4990546151723888597}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.8105617, y: 0.39, z: 4.54247}
+  m_Center: {x: 0, y: -1.89, z: 0.38629186}
+--- !u!65 &4212929148703223227
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4990546151723888597}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.8105617, y: 4.2555494, z: 0.51}
+  m_Center: {x: 0, y: 0, z: -1.64}
 --- !u!1 &6527325961606823635
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,6 +859,10 @@ MonoBehaviour:
   maxRotation: 100
   turnSpeed: 100
   backRotation: 5
+  fork: {fileID: 6439832236245805905}
+  minFrokPos: 2.407445
+  maxFrokPos: 9.16
+  forkSpeed: 0.5
 --- !u!1 &8323354037369969140
 GameObject:
   m_ObjectHideFlags: 0

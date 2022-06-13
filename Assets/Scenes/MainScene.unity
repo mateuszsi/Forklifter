@@ -829,10 +829,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 561183713, guid: 07c736aeab7eae34f9eaa7e76376da33, type: 3}
-      propertyPath: groundDetection
-      value: 0.09
-      objectReference: {fileID: 0}
     - target: {fileID: 8323354036767388677, guid: 07c736aeab7eae34f9eaa7e76376da33,
         type: 3}
       propertyPath: m_RootOrder
