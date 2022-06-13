@@ -8,6 +8,7 @@ namespace Forklifter
 		[SerializeField] private Transform forklifterTransform;
 		[SerializeField] private Transform centerOfMass;
 		[SerializeField] private float forklifterSpeed;
+		[SerializeField] private float controlOffset;
 
 		[Header("Ground check")]
 		[SerializeField] private Transform groundCheckCenter;
@@ -42,33 +43,11 @@ namespace Forklifter
 
 		public void Move(float vertical, float horizontal, float deltaTime)
 		{
-			var ray = new Ray(groundCheckCenter.position, Vector3.down);
-			if (!Physics.Raycast(ray, groundCheck))
+			if (!IsOnGround())
 				return;
 
-			if (horizontal > 0.2f || horizontal < -0.2f)
-			{
-				rotation += turnSpeed * horizontal * deltaTime;
-				rotation = Mathf.Clamp(rotation, -maxRotation, maxRotation);
-			}
-			else
-			{
-				rotation = Mathf.Lerp(rotation, 0f, deltaTime * backRotation);
-			}
-
-			if (vertical > 0.2f || vertical < -0.2f)
-			{
-				var angularVelocity = forkLifterRigidbody.angularVelocity;
-				angularVelocity.y = rotation * vertical * deltaTime;
-				forkLifterRigidbody.angularVelocity = angularVelocity;
-
-				var speed = forklifterSpeed * vertical;
-				var forward = forklifterTransform.forward;
-				forward.y = 0f;
-				forward.Normalize();
-				forkLifterRigidbody.velocity = forward * speed;
-			}
-
+			CalculateRotation(horizontal, deltaTime);
+			ApplyMove(vertical, deltaTime);
 			RotateWheels();
 		}
 
@@ -80,6 +59,41 @@ namespace Forklifter
 			forkPosition.y = Mathf.Clamp(forkPosition.y, minFrokPos, maxFrokPos);
 
 			fork.localPosition = forkPosition;
+		}
+
+		private bool IsOnGround()
+		{
+			var ray = new Ray(groundCheckCenter.position, Vector3.down);
+			return Physics.Raycast(ray, groundCheck);
+		}
+
+		private void CalculateRotation(float horizontal, float deltaTime)
+		{
+			if (horizontal > controlOffset || horizontal < -controlOffset)
+			{
+				rotation += turnSpeed * horizontal * deltaTime;
+				rotation = Mathf.Clamp(rotation, -maxRotation, maxRotation);
+			}
+			else
+			{
+				rotation = Mathf.Lerp(rotation, 0f, deltaTime * backRotation);
+			}
+		}
+
+		private void ApplyMove(float vertical, float deltaTime)
+		{
+			if (vertical < 0.2f && vertical > -0.2f)
+				return;
+
+			var angularVelocity = forkLifterRigidbody.angularVelocity;
+			angularVelocity.y = rotation * vertical * deltaTime;
+			forkLifterRigidbody.angularVelocity = angularVelocity;
+
+			var speed = forklifterSpeed * vertical;
+			var forward = forklifterTransform.forward;
+			forward.y = 0f;
+			forward.Normalize();
+			forkLifterRigidbody.velocity = forward * speed;
 		}
 
 		private void RotateWheels()
