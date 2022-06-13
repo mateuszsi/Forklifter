@@ -13,6 +13,7 @@ namespace Forklifter
 
 		[Header("Ground check")]
 		[SerializeField] private Transform groundCheckCenter;
+		[SerializeField] private Transform groundCheckCenter2;
 		[SerializeField] private float groundCheck;
 
 		[Header("Rotation")]
@@ -65,7 +66,9 @@ namespace Forklifter
 		private bool IsOnGround()
 		{
 			var ray = new Ray(groundCheckCenter.position, Vector3.down);
-			return Physics.Raycast(ray, groundCheck);
+			var ray2 = new Ray(groundCheckCenter2.position, Vector3.down);
+
+			return Physics.Raycast(ray, groundCheck) && Physics.Raycast(ray2, groundCheck);
 		}
 
 		private void CalculateRotation(float horizontal, float deltaTime)
@@ -92,7 +95,7 @@ namespace Forklifter
 
 			var speed = (vertical < 0f ? forklifterBackSpeed : forklifterSpeed) * vertical;
 			var forward = forklifterTransform.forward;
-			if(forward.y > 0f)
+			//if(forward.y > 0f)
 				forward.y = 0f;
 			forward.Normalize();
 			forkLifterRigidbody.velocity = forward * speed;
