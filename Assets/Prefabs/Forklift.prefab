@@ -948,6 +948,7 @@ MonoBehaviour:
   forklifterTransform: {fileID: 8323354036767388677}
   centerOfMass: {fileID: 2074468895}
   forklifterSpeed: 6
+  forklifterBackSpeed: 3
   controlOffset: 0.2
   groundCheckCenter: {fileID: 7725400759143170004}
   groundCheck: 2.1

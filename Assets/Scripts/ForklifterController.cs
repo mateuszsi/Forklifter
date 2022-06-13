@@ -8,6 +8,7 @@ namespace Forklifter
 		[SerializeField] private Transform forklifterTransform;
 		[SerializeField] private Transform centerOfMass;
 		[SerializeField] private float forklifterSpeed;
+		[SerializeField] private float forklifterBackSpeed;
 		[SerializeField] private float controlOffset;
 
 		[Header("Ground check")]
@@ -89,9 +90,10 @@ namespace Forklifter
 			angularVelocity.y = rotation * vertical * deltaTime;
 			forkLifterRigidbody.angularVelocity = angularVelocity;
 
-			var speed = forklifterSpeed * vertical;
+			var speed = (vertical < 0f ? forklifterBackSpeed : forklifterSpeed) * vertical;
 			var forward = forklifterTransform.forward;
-			forward.y = 0f;
+			if(forward.y > 0f)
+				forward.y = 0f;
 			forward.Normalize();
 			forkLifterRigidbody.velocity = forward * speed;
 		}
