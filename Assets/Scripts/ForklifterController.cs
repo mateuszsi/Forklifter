@@ -9,6 +9,10 @@ namespace Forklifter
 		[SerializeField] private Transform centerOfMass;
 		[SerializeField] private float forklifterSpeed;
 
+		[Header("Ground check")]
+		[SerializeField] private Transform groundCheckCenter;
+		[SerializeField] private float groundCheck;
+
 		[Header("Rotation")]
 		[SerializeField] private float maxRotation;
 		[SerializeField] private float turnSpeed;
@@ -38,6 +42,10 @@ namespace Forklifter
 
 		public void Move(float vertical, float horizontal, float deltaTime)
 		{
+			var ray = new Ray(groundCheckCenter.position, Vector3.down);
+			if (!Physics.Raycast(ray, groundCheck))
+				return;
+
 			if (horizontal > 0.2f || horizontal < -0.2f)
 			{
 				rotation += turnSpeed * horizontal * deltaTime;
@@ -50,10 +58,15 @@ namespace Forklifter
 
 			if (vertical > 0.2f || vertical < -0.2f)
 			{
-				forkLifterRigidbody.angularVelocity = new Vector3(0, rotation * vertical * deltaTime, 0);
+				var angularVelocity = forkLifterRigidbody.angularVelocity;
+				angularVelocity.y = rotation * vertical * deltaTime;
+				forkLifterRigidbody.angularVelocity = angularVelocity;
 
 				var speed = forklifterSpeed * vertical;
-				forkLifterRigidbody.velocity = forklifterTransform.forward * speed;
+				var forward = forklifterTransform.forward;
+				forward.y = 0f;
+				forward.Normalize();
+				forkLifterRigidbody.velocity = forward * speed;
 			}
 
 			RotateWheels();
