@@ -984,7 +984,7 @@ MonoBehaviour:
   controlOffset: 0.2
   groundCheckCenter: {fileID: 7725400759143170004}
   groundCheckCenter2: {fileID: 818068657}
-  groundCheck: 1.2
+  groundCheck: 1.3
   maxRotation: 45
   turnSpeed: 40
   backRotation: 5
