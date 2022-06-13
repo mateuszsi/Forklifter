@@ -95,8 +95,7 @@ namespace Forklifter
 
 			var speed = (vertical < 0f ? forklifterBackSpeed : forklifterSpeed) * vertical;
 			var forward = forklifterTransform.forward;
-			//if(forward.y > 0f)
-				forward.y = 0f;
+			forward.y = 0f;
 			forward.Normalize();
 			forkLifterRigidbody.velocity = forward * speed;
 		}
